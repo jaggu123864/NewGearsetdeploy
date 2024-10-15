@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_city_required</fullName>
+    <active>true</active>
+    <description>Type = prospect billing city should not be blank</description>
+    <errorConditionFormula>AND(ISPICKVAL(Type,&quot;Prospect&quot;),
+ ISBLANK(BillingCity),
+ $Profile.Name &lt;&gt; &#39;System Administrator&#39;)</errorConditionFormula>
+    <errorDisplayField>BillingCity</errorDisplayField>
+    <errorMessage>Billing city filed is required on Type = prospect</errorMessage>
+</ValidationRule>
